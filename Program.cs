@@ -25,7 +25,7 @@ namespace IsPieceMoveFinder
                     {
                         h = Convert.ToInt32(str[1]) - 48;
                         w = str[0]-64;
-                        if ((w < 1 && w > 8) && (h < 1 && h > 8))
+                        if ((w < 1 || w > 8) || (h < 1 || h > 8))
                         {
                             isTrue = false;
                         } else
@@ -219,7 +219,7 @@ namespace IsPieceMoveFinder
         }
 
 
-        static void Main(string[] args)
+        static void Main()
         {
             byte[,] chessBoard = { { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, 
                                    { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
@@ -270,9 +270,23 @@ namespace IsPieceMoveFinder
                     {
                         Console.Write(chessBoard[ii,i] + " ");
                     }
-                    Console.WriteLine(" ");
+                    Console.WriteLine("  " + i+1);
                 }
+                Console.WriteLine(" ");
+                Console.WriteLine("   A B C D E F G H");
+                Console.WriteLine(" ");
+                Console.WriteLine("0 - невозможная позиция");
+                Console.WriteLine("1 - возможная   позиция");
+                Console.WriteLine("2 - начальная   позиция");
+                Console.WriteLine("3 - конечная    позиция");
+                Console.WriteLine(" ");
             }
+
+            Console.WriteLine("Желаете продолжить выполнение программы? (1.Да 2.Нет)");
+            if (int.TryParse(Console.ReadLine(), out k) && k == 1)
+            {
+                Main();
+            }    
         }
     }
 }
