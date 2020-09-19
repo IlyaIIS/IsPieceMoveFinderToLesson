@@ -253,8 +253,10 @@ namespace IsPieceMoveFinder
             chessBoard = GetChessBoard(place_1, pieceNum);
             chessBoard[place_1[0], place_1[1]] = 2;
 
+            Console.WriteLine(" ");
             if (chessBoard[place_2[0], place_2[1]] == 1) { Console.WriteLine("Ход действителен!");   }else
                                                          { Console.WriteLine("Ход недействителен!"); }
+            Console.WriteLine(" ");
 
             chessBoard[place_2[0], place_2[1]] = 3;
 
@@ -270,7 +272,7 @@ namespace IsPieceMoveFinder
                     {
                         Console.Write(chessBoard[ii,i] + " ");
                     }
-                    Console.WriteLine("  " + i+1);
+                    Console.WriteLine("  " + (i+1));
                 }
                 Console.WriteLine(" ");
                 Console.WriteLine("   A B C D E F G H");
