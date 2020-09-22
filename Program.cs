@@ -44,8 +44,7 @@ namespace IsPieceMoveFinder
 
         static byte[,] GetChessBoard(int[] place, int piece) //Вычисление поля возможных холов фигуры
         {
-            byte[,] cb = { { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 },
-                           { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
+            byte[,] cb = new byte[ 8, 8 ];
             int[] placeNow = { 0, 0 };
 
             if (piece == 1) //Король
@@ -221,8 +220,7 @@ namespace IsPieceMoveFinder
 
         static void Main()
         {
-            byte[,] chessBoard = { { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, 
-                                   { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0, 0, 0, 0 } };
+            byte[,] chessBoard = new byte[ 8, 8 ];
             string pieceStr;
             int pieceNum, k;
             bool isTrue;
